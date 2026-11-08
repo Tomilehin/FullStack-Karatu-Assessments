@@ -1,0 +1,43 @@
+
+name: Deploy Assessment 2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Assessment 2/**'
+      - '.github/workflows/deploy-assessment2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Assessment 2
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'Assessment 2'
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
