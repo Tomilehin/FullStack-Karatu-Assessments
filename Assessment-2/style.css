@@ -1,3 +1,43 @@
+@font-face {
+    font-family: 'Gilroy-Medium';
+    src: url('assets/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: url('assets/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy-SemiBold';
+    src: url('assets/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('assets/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('assets/fonts/Gilroy-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+body {
+    font-family: 'Gilroy', sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -6,22 +46,51 @@ header {
     max-width: 1150px;
     margin: 12px auto;
 }
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 211px;
+    height: 44px;
+}
 nav a {
     text-decoration: none;
     color: inherit;
+}
+nav a.url {
+    color: #0065FE;
 }
 nav {
     display: flex;
     gap: 40px;
 }
-button {
+.login-btn {
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
     background-color: transparent;
     border: none;
     color: #0065FE;
-    padding: 10px 20px;
+    white-space: nowrap;
     cursor: pointer;
+}
+.try-btn {
+    font-family: 'Gilroy-SemiBold', sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0;
+    background-color: #0065FE;
+    color: white;
+    border: none;
+    width: 142px;
+    height: 44px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 main {
     text-align: center;
@@ -29,14 +98,54 @@ main {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 48px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 96px;
+    max-width: 948px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 main p {
+    font-family: 'Gilroy-Medium', sans-serif;
     font-size: 18px;
-    line-height: 1.6;
-    max-width: 700px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    width: 781px;
+    max-width: 100%;
     margin: 20px auto;
+    text-align: center;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+.signup-btn {
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0;
+    background-color: #0065FE;
+    color: white;
+    border: none;
+    width: 142px;
+    height: 44px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.learnmore-btn {
+    background-color: transparent;
+    color: #0065FE;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
 }
