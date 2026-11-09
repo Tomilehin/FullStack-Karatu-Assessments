@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 @font-face {
     font-family: 'Gilroy-Medium';
     src: url('assets/fonts/Gilroy-Medium.ttf') format('truetype');
@@ -17,19 +20,102 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Gilroy';
-    src: url('assets/fonts/Gilroy-Bold.ttf') format('truetype');
-    font-weight: 700;
+@font-face { font-family: 'Gilroy'; src: url('assets/fonts/Gilroy-Regular.ttf') format('truetype'); font-weight: 400; }
+@font-face { font-family: 'Gilroy'; src: url('assets/fonts/Gilroy-Medium.ttf') format('truetype'); font-weight: 500; }
+@font-face { font-family: 'Gilroy'; src: url('assets/fonts/Gilroy-SemiBold.ttf') format('truetype'); font-weight: 600; }
+@font-face { font-family: 'Gilroy'; src: url('assets/fonts/Gilroy-Bold.ttf') format('truetype'); font-weight: 700; }
+@font-face { font-family: 'Gilroy'; src: url('assets/fonts/Gilroy-ExtraBold.ttf') format('truetype'); font-weight: 800; }
+
+body {
+    margin: 0;
+    font-family: 'Gilroy', sans-serif;
+    background:
+        radial-gradient(ellipse at 15% 0%, #fdf1e6 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 0%, #fff8e8 0%, transparent 40%),
+        #fff;
 }
 
-@font-face {
-    font-family: 'Gilroy';
-    src: url('assets/fonts/Gilroy-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
+nav { display: flex; gap: 40px; font-weight: 500; }
+
+main { text-align: center; padding: 0; }
+.hero { padding: 80px 20px 120px; position: relative; }
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 948px;
+    gap: 32px;
+    margin: 0 auto;
 }
-body {
-    font-family: 'Gilroy', sans-serif;
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 96px;
+    margin: 0;
+}
+
+.hero-heading {
+    position: relative;
+    width: 948px;
+    height: 200px;
+}
+
+.highlight { 
+    color: #0065FE; 
+    display: inline-block; 
+}
+.heading-slash {
+    position: absolute;
+    width: 173.63px;
+    height: 19.91px;
+    left: 397px;
+    top: 167.91px;
+    pointer-events: none;
+}
+
+main p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    width: 781px;
+    max-width: 100%;
+    margin: 0;
+}
+
+.link-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 768px;
+    height: 224px;
+    margin: 80px auto 0;
+    padding: 40px 60px;
+    background: #FEFEFE1A;
+    border: 0.5px solid #005AE2;
+    backdrop-filter: blur(212px);
+    -webkit-backdrop-filter: blur(212px);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.link-card p {
+    font-size: 14px;
+    line-height: 20px;
+    width: auto;
+    margin: 0;
+}
+.platform {
+    width: 100%;
+    max-width: 1000px;
+    height: 120px;
+    margin: -30px auto 0;
+    background: radial-gradient(ellipse at center, #e4e8ef 0%, #f1f4f9 60%, transparent 70%);
+    border-radius: 50%;
 }
 
 button,
@@ -60,10 +146,7 @@ nav a {
 nav a.url {
     color: #0065FE;
 }
-nav {
-    display: flex;
-    gap: 40px;
-}
+
 .login-btn {
     font-family: 'Gilroy-SemiBold', sans-serif;
     font-size: 16px;
@@ -92,37 +175,13 @@ nav {
     cursor: pointer;
     white-space: nowrap;
 }
-main {
-    text-align: center;
-    padding: 80px 20px;
-}
 
-h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 96px;
-    max-width: 948px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-main p {
-    font-family: 'Gilroy-Medium', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
-    letter-spacing: 0;
-    width: 781px;
-    max-width: 100%;
-    margin: 20px auto;
-    text-align: center;
-}
 .hero-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 56px;
+    margin-top: 0;
 }
 .signup-btn {
     font-family: 'Gilroy-SemiBold', sans-serif;
@@ -141,11 +200,61 @@ main p {
     white-space: nowrap;
 }
 .learnmore-btn {
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0;
     background-color: transparent;
     color: #0065FE;
     border: none;
     padding: 12px 30px;
     cursor: pointer;
-    font-size: 16px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 120px;
+    padding: 60px 140px;
+    background: #f7f9fc;
+    text-align: left;
+}
+
+.stats h2 {
+    flex-shrink: 0;
+    margin: 0;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.stats-group {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.stat {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.stat span {
+    font-size: 14px;
     font-weight: 500;
+    max-width: 160px;
+}
+
+
+
+@media (max-width: 768px) {
+    h1 { font-size: 28px; line-height: 44px; }
+    h1 br { display: none; }
+    .stats { flex-wrap: wrap; gap: 32px; }
+    nav { display: none; } /* or build a mobile menu */
 }
