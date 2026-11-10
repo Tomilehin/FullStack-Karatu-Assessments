@@ -512,9 +512,45 @@ nav a.url {
 }
 
 
+
 @media (max-width: 768px) {
 
-    /* General */
+    /* Header */
+    header {
+        width: calc(100% - 32px);
+    }
+
+    nav {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 48px 16px 80px;
+    }
+
+    .hero-content {
+        gap: 24px;
+    }
+
+    .hero-heading {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 35px;
+    }
+
+    .heading-slash {
+        display: block;
+        position: absolute;
+        width: 140px;
+        height: auto;
+        left: 50%;
+        top: auto;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+
     h1 {
         font-size: 28px;
         line-height: 44px;
@@ -524,27 +560,31 @@ nav a.url {
         display: none;
     }
 
-    /* Header */
-    nav {
+    .hero-heading .heading-slash {
         display: none;
     }
+    .heading-slash {
+    display: block;
+    width: 140px;
+    height: auto;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+}
 
-    header {
-        width: calc(100% - 32px);
-    }
-
-    /* Hero */
-    .hero {
-        padding: 48px 16px 80px;
-    }
-
-    .hero-heading {
+    main p {
         width: 100%;
+    }
+
+    .link-card {
+        padding: 24px;
         height: auto;
     }
-
-    .hero-content {
-        gap: 24px;
+    .link-card img {
+        width: 100%;
+        max-width: 384px;
+        height: auto;
+        object-fit: contain;
     }
 
     /* Statistics */
@@ -571,7 +611,7 @@ nav a.url {
         row-gap: 40px;
     }
 
-
+    /* Pricing */
     .pricing {
         padding: 64px 16px;
     }
