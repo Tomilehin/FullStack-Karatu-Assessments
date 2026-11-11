@@ -511,9 +511,225 @@ nav a.url {
     border: 1px solid #0065FE;
 }
 
+/* ---------- Shared dark band (form hero + CTA) ---------- */
+.dark-band {
+    background: #1E3448;
+    /* Export the wave shapes from Figma as one SVG and use it here: */
+    /* background: #1E3448 url('assets/dark-waves.svg') center / cover no-repeat; */
+    color: #fff;
+}
+
+/* ---------- URL form hero ---------- */
+.shorten-hero {
+    display: flex;
+    justify-content: center;
+    padding: 48px 24px 56px;
+}
+
+.shorten-card {
+    width: 100%;
+    max-width: 268px;       /* card is ~268px wide in the screenshot; adjust to your Figma value */
+    min-width: 0;
+    padding: 24px;
+    background: #fff;
+    color: #112232;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+.field {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #0065FE;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 12px;
+    color: #0065FE;
+}
+.field::placeholder { color: #0065FE; }
+
+.shorten-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* custom chevron on the select */
+select.field {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 32px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%230065FE' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 12px center;
+}
+
+.trim-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    border: none;
+    border-radius: 100px;
+    background: #0065FE;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.shorten-terms {
+    margin: 0;
+    font-size: 11px;
+    line-height: 16px;
+    color: #0065FE;
+}
+.shorten-terms a {
+    color: #0065FE;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ---------- Section title with the gradient bar ---------- */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+.section-title::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 4px;
+    width: 4px;
+    height: 28px;
+    background: linear-gradient(180deg, #112232, #fff);
+}
+
+/* ---------- FAQs ---------- */
+.faqs {
+    padding: 64px 24px 96px;
+    text-align: center;
+}
+
+.faq-list {
+    max-width: 640px;
+    margin: 48px auto 0;
+    text-align: left;
+}
+
+.faq {
+    border-bottom: 1px solid #E3E8EF;
+}
+
+.faq summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;                 /* Firefox */
+}
+.faq summary::-webkit-details-marker { display: none; }   /* Safari/Chrome */
+
+/* plus / minus icon */
+.faq summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+}
+.faq[open] summary::after { content: "−"; }
+
+.faq p {
+    margin: 0 0 22px;
+    font-size: 13px;
+    line-height: 22px;
+    color: #333;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+    padding: 80px 24px;
+    text-align: center;
+}
+.cta-band h2 {
+    margin: 0 0 32px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    padding: 64px 24px 24px;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 64px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.socials { display: flex; gap: 16px; }
+.socials img { width: 16px; height: 16px; }
+
+/* 4 columns: first 4 groups on row 1, the remaining 3 wrap to row 2 */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 56px 32px;
+    text-align: left;
+}
+.footer-links div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.footer-links h4 {
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.footer-links a {
+    font-size: 11px;
+    line-height: 16px;
+    color: #112232;
+    text-decoration: none;
+}
+.footer-links a:hover { color: #0065FE; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+    font-size: 10px;
+}
+.footer-bottom a { color: inherit; text-decoration: none; }
+
+/* ---------- Responsive (put inside your existing media queries) ---------- */
 
 
-/* Narrow desktop and tablet: stack the fixed-width components */
+
+/* Tablets */
 @media (max-width: 1140px) {
     /* Hero */
     .hero-heading {
@@ -522,7 +738,6 @@ nav a.url {
         padding-bottom: 35px;
     }
 
-    /* The Figma offsets only fit a 948px-wide heading, so center the slash below it */
     .heading-slash {
         left: 50%;
         top: auto;
@@ -537,20 +752,17 @@ nav a.url {
         line-height: 1.5;
     }
 
-    /* Stats */
     .stats {
         grid-template-columns: minmax(0, 1fr);
         gap: 32px;
     }
 
-    /* Features */
     .features {
         grid-template-columns: minmax(0, 1fr);
         gap: 40px;
         min-height: 0;
     }
 
-    /* Pricing */
     .pricing-cards {
         flex-direction: column;
         width: 100%;
@@ -635,4 +847,16 @@ nav a.url {
         flex-wrap: wrap;
         margin-top: 40px;
     }
+}
+
+@media (max-width: 1140px) {
+    .footer-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .footer-inner { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    .footer-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 24px; }
+    .footer-bottom { justify-content: center; flex-wrap: wrap; }
+    .cta-band h2 { font-size: 24px; }
+    .section-title { font-size: 28px; }
 }

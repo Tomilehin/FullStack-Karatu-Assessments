@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'Assessment-2/**'
+      - 'index.html'
       - '.github/workflows/deploy-assessment2.yml'
   workflow_dispatch:
 
@@ -36,7 +37,7 @@ jobs:
       - name: Upload Assessment 2
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'Assessment-2'
+          path: '.'
 
       - name: Deploy
         id: deployment
