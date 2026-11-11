@@ -513,109 +513,44 @@ nav a.url {
 
 
 
-@media (max-width: 768px) {
-
-    /* Header */
-    header {
-        width: calc(100% - 32px);
-    }
-
-    nav {
-        display: none;
-    }
-
+/* Narrow desktop and tablet: stack the fixed-width components */
+@media (max-width: 1140px) {
     /* Hero */
-    .hero {
-        padding: 48px 16px 80px;
-    }
-
-    .hero-content {
-        gap: 24px;
-    }
-
     .hero-heading {
-        position: relative;
         width: 100%;
         height: auto;
         padding-bottom: 35px;
     }
 
+    /* The Figma offsets only fit a 948px-wide heading, so center the slash below it */
     .heading-slash {
-        display: block;
-        position: absolute;
-        width: 140px;
-        height: auto;
         left: 50%;
         top: auto;
         bottom: 0;
+        width: 140px;
+        height: auto;
         transform: translateX(-50%);
     }
 
     h1 {
-        font-size: 28px;
-        line-height: 44px;
+        font-size: clamp(28px, 4.4vw, 48px);
+        line-height: 1.5;
     }
 
-    h1 br {
-        display: none;
-    }
-
-    .hero-heading .heading-slash {
-        display: none;
-    }
-    .heading-slash {
-    display: block;
-    width: 140px;
-    height: auto;
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-}
-
-    main p {
-        width: 100%;
-    }
-
-    .link-card {
-        padding: 24px;
-        height: auto;
-    }
-    .link-card img {
-        width: 100%;
-        max-width: 384px;
-        height: auto;
-        object-fit: contain;
-    }
-
-    /* Statistics */
+    /* Stats */
     .stats {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 32px;
-        padding: 40px 24px;
-    }
-
-    .stats-group {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 24px;
     }
 
     /* Features */
     .features {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 40px;
-        width: calc(100% - 48px);
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-        row-gap: 40px;
+        min-height: 0;
     }
 
     /* Pricing */
-    .pricing {
-        padding: 64px 16px;
-    }
-
     .pricing-cards {
         flex-direction: column;
         width: 100%;
@@ -624,18 +559,76 @@ nav a.url {
     }
 
     .pricing-card,
-    .pricing-card.professional {
+    .pricing-card.professional,
+    .pricing-card.teams {
         width: 100%;
         max-width: 410px;
-        flex: none;
         height: auto;
         min-height: 455px;
+        flex: none;
         margin-left: 0;
         transform: none;
     }
 
     .pricing-card.professional {
         min-height: 627px;
+    }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+    header { flex-wrap: wrap; gap: 12px; }
+    nav {
+        order: 3;
+        width: 100%;
+        gap: 24px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    nav {
+        display: none;   /* needs a mobile menu eventually */
+    }
+
+    .hero {
+        padding: 48px 16px 80px;
+    }
+
+    .hero-content {
+        gap: 24px;
+    }
+
+    h1 br {
+        display: none;
+    }
+
+    .link-card {
+        height: auto;
+        padding: 24px;
+    }
+
+    .link-card img {
+        width: 100%;
+        max-width: 384px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .stats {
+        padding: 40px 24px;
+    }
+
+    .stats-group {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .features-grid {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 40px;
+    }
+
+    .pricing {
+        padding: 64px 16px;
     }
 
     .pricing-actions {
